@@ -10,6 +10,7 @@ import java.time.Duration;
 
 public class IsLoaded {
     private final WebDriver driver;
+
     private IsLoaded(WebDriver driver) {
         this.driver = driver;
     }
@@ -20,8 +21,7 @@ public class IsLoaded {
 
     public IsLoaded whenElementIsVisible(WebElement element, String description) {
         try {
-            new WebDriverWait(driver, Duration.ofSeconds(30))
-                    .until(ExpectedConditions.visibilityOf(element));
+            new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.visibilityOf(element));
             return this; // Allows for method chaining
         } catch (NoSuchElementException e) {
             throw new AssertionError(description + " is not visible. " + e.getMessage());
@@ -30,8 +30,7 @@ public class IsLoaded {
 
     public IsLoaded whenTitleIs(String expectedTitle, String description) {
         try {
-            new WebDriverWait(driver, Duration.ofSeconds(30))
-                    .until(ExpectedConditions.titleIs(expectedTitle));
+            new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.titleIs(expectedTitle));
             return this;
         } catch (Exception e) {
             throw new AssertionError(description + " - Expected title: '" + expectedTitle + "'. " + e.getMessage());
@@ -40,8 +39,7 @@ public class IsLoaded {
 
     public IsLoaded whenElementTextIs(WebElement element, String expectedText, String description) {
         try {
-            new WebDriverWait(driver, Duration.ofSeconds(30))
-                    .until(ExpectedConditions.textToBePresentInElement(element, expectedText));
+            new WebDriverWait(driver, Duration.ofSeconds(30)).until(ExpectedConditions.textToBePresentInElement(element, expectedText));
             return this;
         } catch (Exception e) {
             throw new AssertionError(description + " - Expected text: '" + expectedText + "'. " + e.getMessage());

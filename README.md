@@ -7,8 +7,8 @@ orangeHRM/
 │   │
 │   └── test/
 │       ├── java/
-│       │   ├── hooks/
-│       │   │   └── Hook.java  (Cucumber hooks for setup and teardown)
+│       │   ├── hook/
+│       │   │   └── Hook.java  (Cucumber hook for setup and teardown)
 │       │   │
 │       │   ├── pages/
 │       │   │   ├── LoginPage.java  (Page object for the login page)

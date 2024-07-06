@@ -5,7 +5,7 @@ Feature: Login into OrangeHRM
   @SmokeTest
   Scenario: Successful login with valid credentials
     Given I navigate to the login page
-    #When I enter the username "username" and the password "password"
+    #When I enter the username "Admin" and the password "admin123"
     When I enter the following credentials
       | username | password  |
       | Admin    | admin123  |
